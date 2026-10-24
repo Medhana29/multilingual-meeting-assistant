@@ -1,0 +1,36 @@
+# Indic Meeting Captioner - dependencies
+# Developed on Kaggle (GPU image, Python 3.13). torch / numpy / pandas come
+# preinstalled there; install a CUDA build of torch yourself elsewhere.
+#
+# Before submitting, replace the ranges below with the exact versions from your
+# final run, e.g. in a notebook cell:
+#   !pip freeze | grep -iE "^(transformers|peft|jiwer|sacrebleu|soundfile|librosa|silero-vad|datasets|matplotlib|scipy|nltk|rouge-score|bert-score|scikit-learn|torch|numpy|pandas)=="
+
+# --- core pipeline (01a / 01b) ---
+transformers<5
+datasets
+silero-vad
+jiwer
+sacrebleu
+soundfile
+librosa
+matplotlib
+numpy
+pandas
+torch
+
+# --- LoRA fine-tuning (02) ---
+peft
+scipy
+
+# --- extra metrics (03) ---
+nltk
+rouge-score
+bert-score
+scikit-learn
+
+# --- IndicTrans2 preprocessing (installed from GitHub, not PyPI) ---
+git+https://github.com/VarunGumma/IndicTransToolkit.git
+
+# Note: if peft raises "incompatible version of torchao", run:
+#   pip uninstall -y torchao
