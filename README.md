@@ -144,7 +144,18 @@ How to read this:
 
 ### 5.4 Extra metrics
 
-BERTScore, METEOR, entity preservation and intent agreement for Telugu and Tamil are in `results/extra_metrics/extra_metrics_summary.csv`.
+Computed on the baseline results (200 translation sentences and 50 cascade sentences per language).
+
+| Metric | Telugu | Tamil |
+|---|---|---|
+| Translation BERTScore F1 | 95.5 | 94.6 |
+| Cascade BERTScore F1 | 96.6 | 96.3 |
+| Entity F1, text translation | 79.1 | 74.5 |
+| Entity F1, speech cascade | 75.4 | 63.2 |
+| Intent agreement, text translation (kappa) | 82 % (0.71) | 86 % (0.77) |
+| Intent agreement, speech cascade (kappa) | 92 % (0.84) | 82 % (0.71) |
+
+Dates, numbers and organisations are preserved well (about 80–96 % recall for text translation). Person names are the weak point in both languages, with only about 50–55 % recall for text translation. The cascade entity scores rest on only 45–55 reference entities per language, and the intent check uses a zero-shot classifier, so these numbers are indicative, not exact. Full tables are in `results/extra_metrics/`.
 
 ---
 
